@@ -1,5 +1,18 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+{{#if session.isAuthenticated}}
+  {{#paper-toolbar as |toolbar|}}
+    {{#toolbar.tools}}
+      <h2>Kart-Metrics</h2>
+      <span class="flex"></span>
+      {{#paper-button onClick=(route-action "signOut")}}
+        Sign Out
+      {{/paper-button}}
+    {{/toolbar.tools}}
+  {{/paper-toolbar}}
+  <div class="layout-column layout-align-center-center">
+    <p>Logged in as {{session.currentUser.displayName}}.</p>
+    <p>{{session.currentUser.email}}</p>
+  </div>
+  {{outlet}}
+{{else}}
+  {{sign-in signIn=(route-action "signIn")}}
+{{/if}}

@@ -19,3 +19,4 @@ testem.log
 
 # ignore environment.js due to Firebase API information
 config/environment.js
+data/

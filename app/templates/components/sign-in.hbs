@@ -1,0 +1,28 @@
+<div class="layout-row layout-xs-column layout-align-end-center">
+    <div class="layout-column flex-xs flex-gt-xs-70">
+        {{#paper-card as |card|}}
+            {{#card.title as |title|}}
+                {{#title.text as |text|}}
+                    {{#text.headline}}Welcome to Kart-Metrics{{/text.headline}}
+                {{/title.text}}
+            {{/card.title}}
+            {{#card.actions}}
+                <div class="layout-row layout-xs-column layout-align-space-between-center">
+                    <div>
+                        {{#paper-button class="g-signin2" raised=true onClick=(action "signIn" "google")}}
+                            Sign In With Google
+                        {{/paper-button}}
+                    </div>
+                    <div>
+                        <p>or</p>
+                    </div>
+                    <div>
+                        {{#paper-button class="fb-login-button" raised=true onClick=(action "signIn" "facebook")}}
+                            Sign In With Facebook
+                        {{/paper-button}}
+                    </div>
+                </div>
+            {{/card.actions}}
+        {{/paper-card}}
+    </div>
+</div>

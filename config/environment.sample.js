@@ -26,6 +26,9 @@ module.exports = function(environment) {
       databaseURL: 'https://YOUR-FIREBASE-APP.firebaseio.com',
       storageBucket: 'YOUR-FIREBASE-APP.appspot.com',
     },
+    torii: {
+      sessionServiceName: 'session'
+    }
   };
 
   if (environment === 'development') {
