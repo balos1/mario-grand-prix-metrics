@@ -1,0 +1,49 @@
+{{#paper-toolbar class="navigation-bar" as |toolbar|}}
+  {{#toolbar.tools}}
+    {{#paper-button iconButton=true onClick=(action "toggleSideNav")}}
+      {{paper-icon "menu"}}
+    {{/paper-button}}
+    <h2>Kart Companion</h2>
+    <span class="flex"></span>
+    {{#paper-menu position="target-right target" as |menu|}}
+      {{#menu.trigger}}
+        {{#paper-button class="profile" onClick=null iconBUtton=true}}
+          <img class="profile-thumbnail" src={{cornerImageURL}}/>
+        {{/paper-button}}
+      {{/menu.trigger}}
+      {{#menu.content width=4 as |content|}}
+        {{#content.menu-item onClick=(route-action "signOut")}}
+          <span>Sign Out</span>
+        {{/content.menu-item}}
+      {{/menu.content}}
+    {{/paper-menu}}
+  {{/toolbar.tools}}
+{{/paper-toolbar}}
+
+{{! Sidenav triggered by menu icon button in nav bar}}
+{{#paper-sidenav class="sidenav" position='left' lockedOpen=false open=showSideNav onToggle=(action "toggleSideNav")}}
+  {{#paper-toolbar as |toolbar|}}
+    {{#toolbar.tools}}
+      <h2>Kart Companion</h2>
+    {{/toolbar.tools}}
+  {{/paper-toolbar}}
+  {{paper-divider}}
+  <div class="layout-column layout-align-start-start">
+    {{#paper-button}}
+      {{paper-icon "dashboard"}}
+      <span>Dashboard</span>
+    {{/paper-button}}
+    {{#paper-button}}
+      {{paper-icon "history"}}
+      <span>History</span>
+    {{/paper-button}}
+    {{#paper-button}}
+      {{paper-icon "trending-up"}}
+      <span>Metrics</span>
+    {{/paper-button}}
+    {{#paper-button}}
+      {{paper-icon "help"}}
+      <span>About</span>
+    {{/paper-button}}
+  </div>
+{{/paper-sidenav}}

@@ -1,17 +1,13 @@
 {{#if session.isAuthenticated}}
-  {{#paper-toolbar as |toolbar|}}
-    {{#toolbar.tools}}
-      <h2>Kart-Metrics</h2>
-      <span class="flex"></span>
-      {{#paper-button onClick=(route-action "signOut")}}
-        Sign Out
-      {{/paper-button}}
-    {{/toolbar.tools}}
-  {{/paper-toolbar}}
+  {{navigation-bar cornerImageURL=session.currentUser.photoURL signOut=(route-action "signOut")}}
   <div class="layout-column layout-align-center-center">
+    {{log session.currentUser}}
     <p>Logged in as {{session.currentUser.displayName}}.</p>
     <p>{{session.currentUser.email}}</p>
   </div>
+  {{#paper-button id="add-gp" raised=true fab=true iconButton=false}}
+    {{paper-icon "add"}}
+  {{/paper-button}}
   {{outlet}}
 {{else}}
   {{sign-in signIn=(route-action "signIn")}}

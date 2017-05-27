@@ -1,0 +1,23 @@
+md-toolbar.md-default-theme.navigation-bar {
+  background-color: color($primary, '800');
+  .profile {
+    margin-top: 8px;
+  }
+  .profile-thumbnail {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.sidenav {
+  color: black;
+  background-color: #FFF;
+  md-toolbar.md-default-theme {
+    color: black;
+    background-color: #FFF;
+  }
+  md-icon.md-default-theme {
+    padding-right: 15px;
+  }
+}

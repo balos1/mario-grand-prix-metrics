@@ -1,1 +1,22 @@
+// Define desired color palettes.
+$primary: "red";
+$accent: "blue";
+$background: "grey";
+$warn: "yellow";
+
 @import 'ember-paper';
+@import 'navigation';
+
+html, body {
+  background-color: color($background, '100');
+}
+
+#add-gp {
+  md-icon {
+    color: color($accent, 'contrast');
+  }
+  background-color: color($accent, '700');
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}

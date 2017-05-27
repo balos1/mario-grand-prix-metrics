@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'mario-grand-prix-metrics',
+    modulePrefix: 'kart-companion',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
