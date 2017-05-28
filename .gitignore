@@ -16,7 +16,9 @@
 npm-debug.log*
 testem.log
 
-
 # ignore environment.js due to Firebase API information
 config/environment.js
 data/
+
+# editor stuff
+.vscode
