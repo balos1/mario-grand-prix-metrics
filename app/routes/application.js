@@ -14,8 +14,8 @@ export default Route.extend({
     signIn: function(provider) {
      get(this, 'session').open('firebase', { provider: provider}).then((data) => {
         console.log(data.currentUser);
-        let newTest = get(this, 'store').createRecord('test', {winner: data.currentUser.uid});
-        newTest.save();
+        // let newTest = get(this, 'store').createRecord('test', {winner: data.currentUser.uid});
+        // newTest.save();
       });
     },
     signOut: function() {

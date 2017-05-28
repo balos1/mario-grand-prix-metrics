@@ -1,14 +1,16 @@
 {{#if session.isAuthenticated}}
   {{navigation-bar cornerImageURL=session.currentUser.photoURL signOut=(route-action "signOut")}}
-  <div class="layout-column layout-align-center-center">
+  {{!--<div class="layout-column layout-align-center-center">
     {{log session.currentUser}}
     <p>Logged in as {{session.currentUser.displayName}}.</p>
     <p>{{session.currentUser.email}}</p>
-  </div>
-  {{#paper-button id="add-gp" raised=true fab=true iconButton=false}}
-    {{paper-icon "add"}}
-  {{/paper-button}}
+  </div>--}}
   {{outlet}}
+  {{#link-to "start-gp"}}
+    {{#paper-button id="add-gp" raised=true fab=true iconButton=false}}
+      {{paper-icon "add"}}
+    {{/paper-button}}
+  {{/link-to}}
 {{else}}
   {{sign-in signIn=(route-action "signIn")}}
 {{/if}}

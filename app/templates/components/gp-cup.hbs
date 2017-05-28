@@ -1,0 +1,22 @@
+{{#paper-card as |card|}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}
+        {{cup.title}}
+      {{/text.headline}}
+      {{#text.subhead}}
+        {{cup.game}}
+      {{/text.subhead}}
+    {{/title.text}}
+    {{title.media size="sm" src=cup.photoURL}}
+  {{/card.title}}
+  {{#card.content}}
+    <p>Completed Races</p>
+    {{#paper-chips readOnly=true content=completed as |course|}}
+      {{course.title}}
+    {{/paper-chips}}
+  {{/card.content}}
+  {{#card.actions}}
+    {{#paper-button}}Choose A Race{{/paper-button}}
+  {{/card.actions}}
+{{/paper-card}}
