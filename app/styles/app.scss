@@ -16,7 +16,7 @@ html, body {
     color: color($accent, 'contrast');
   }
   background-color: color($accent, '700');
-  position: absolute;
+  position: sticky;
   bottom: 20px;
-  right: 20px;
+  float: right;
 }
