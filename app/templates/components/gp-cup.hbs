@@ -1,22 +1,51 @@
-{{#paper-card as |card|}}
-  {{#card.title as |title|}}
-    {{#title.text as |text|}}
-      {{#text.headline}}
-        {{cup.title}}
-      {{/text.headline}}
-      {{#text.subhead}}
-        {{cup.game}}
-      {{/text.subhead}}
-    {{/title.text}}
-    {{title.media size="sm" src=cup.photoURL}}
-  {{/card.title}}
-  {{#card.content}}
-    <p>Completed Races</p>
-    {{#paper-chips readOnly=true content=completed as |course|}}
-      {{course.title}}
-    {{/paper-chips}}
-  {{/card.content}}
-  {{#card.actions}}
-    {{#paper-button onClick=(action "chooseARace")}}Choose A Race{{/paper-button}}
-  {{/card.actions}}
-{{/paper-card}}
+<div class="flippable-card{{if showBackOfCard "-show-back"}}">
+  <div class="flippable-card-inner">
+    {{#paper-card class="card-front" as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}
+            {{cup.title}}
+          {{/text.headline}}
+          {{#text.subhead}}
+            {{cup.game}}
+          {{/text.subhead}}
+        {{/title.text}}
+        {{title.media size="sm" src=cup.photoURL}}
+      {{/card.title}}
+      {{#card.content}}
+        <p>Completed Courses</p>
+        {{#paper-chips readOnly=true content=completedCourses as |course|}}
+          {{course.title}} x{{course.count}}
+        {{/paper-chips}}
+      {{/card.content}}
+      {{#card.actions}}
+        {{#paper-button onClick=(action "flipCard")}}Choose A Course{{/paper-button}}
+      {{/card.actions}}
+    {{/paper-card}}
+    {{#paper-card class="card-back" as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}
+            Choose A Course
+          {{/text.headline}}
+          {{#text.subhead}}
+            {{cup.title}}
+          {{/text.subhead}}
+        {{/title.text}}
+        {{title.media size="sm" src=cup.photoURL}}
+      {{/card.title}}
+      {{#card.content}}
+        <div class="layout-row layout-wrap">
+          {{#each cup.courses as |course|}}
+            <div class="flex-50">
+              <img {{action "chooseCourse" course.id}} class="course-select" alt={{course.title}} src={{course.photoURL}} />
+            </div>
+          {{/each}}
+        </div>
+      {{/card.content}}
+      {{#card.actions}}
+        {{#paper-button onClick=(action "flipCard")}}Cup Overview{{/paper-button}}
+      {{/card.actions}}
+    {{/paper-card}}
+  </div>
+</div>
