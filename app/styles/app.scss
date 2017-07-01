@@ -6,6 +6,7 @@ $warn: "yellow";
 
 @import 'ember-paper';
 @import 'navigation';
+@import 'gp-cup';
 
 html, body {
   background-color: color($background, '100');
@@ -21,38 +22,6 @@ html, body {
   float: right;
 }
 
-.flippable-card-show-back .flippable-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flippable-card, .flippable-card-show-back {
-  perspective: 1000px;
-  min-width: 320px;
-  min-height: 350px;
-
-  .flippable-card-inner {
-    position: relative;
-    transition: 1s;
-    transform-style: preserve-3d;
-
-    .card-front, .card-back {
-      position: absolute;
-      backface-visibility: hidden;
-      min-height: 320px;
-      top: 0;
-    }
-
-    .card-front {
-      z-index: 2;
-      transform: rotateY(0deg);
-    }
-
-    .card-back {
-      transform: rotateY(180deg);
-    }
-  }
-}
-
-img.course-select {
-  width: 125px;
+md-card {
+  background-color: white;
 }

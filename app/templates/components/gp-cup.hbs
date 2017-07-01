@@ -1,5 +1,6 @@
 <div class="flippable-card{{if showBackOfCard "-show-back"}}">
   <div class="flippable-card-inner">
+    {{!-- Front of card --}}
     {{#paper-card class="card-front" as |card|}}
       {{#card.title as |title|}}
         {{#title.text as |text|}}
@@ -22,6 +23,7 @@
         {{#paper-button onClick=(action "flipCard")}}Choose A Course{{/paper-button}}
       {{/card.actions}}
     {{/paper-card}}
+    {{!-- Back of card --}}
     {{#paper-card class="card-back" as |card|}}
       {{#card.title as |title|}}
         {{#title.text as |text|}}
@@ -38,7 +40,7 @@
         <div class="layout-row layout-wrap">
           {{#each cup.courses as |course|}}
             <div class="flex-50">
-              <img {{action "chooseCourse" course.id}} class="course-select" alt={{course.title}} src={{course.photoURL}} />
+              <img {{action "chooseCourse" cup course}} class="course-select" alt={{course.title}} src={{course.photoURL}} />
             </div>
           {{/each}}
         </div>

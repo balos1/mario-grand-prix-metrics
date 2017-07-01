@@ -18,7 +18,8 @@ export default Route.extend({
             {id: 2, title: 'Moo Moo Farms', photoURL: 'images/LuigiRaceway.png'},
             {id: 3, title: 'Koopa Troopa Beach', photoURL: 'images/LuigiRaceway.png'},
             {id: 4, title: 'Kalimari Desert', photoURL: 'images/LuigiRaceway.png'}
-          ]
+          ],
+          completedCourses: []
         },
         {
           id: 2,
@@ -30,7 +31,8 @@ export default Route.extend({
             {id: 2, title: 'Moo Moo Farms', photoURL: 'images/LuigiRaceway.png'},
             {id: 3, title: 'Koopa Troopa Beach', photoURL: 'images/LuigiRaceway.png'},
             {id: 4, title: 'Kalimari Desert', photoURL: 'images/LuigiRaceway.png'}
-          ]
+          ],
+          completedCourses: []
         },
         {
           id: 3,
@@ -42,7 +44,8 @@ export default Route.extend({
             {id: 2, title: 'Moo Moo Farms', photoURL: 'images/LuigiRaceway.png'},
             {id: 3, title: 'Koopa Troopa Beach', photoURL: 'images/LuigiRaceway.png'},
             {id: 4, title: 'Kalimari Desert', photoURL: 'images/LuigiRaceway.png'}
-          ]
+          ],
+          completedCourses: []
         },
         {
           id: 4,
@@ -54,7 +57,8 @@ export default Route.extend({
             {id: 2, title: 'Moo Moo Farms', photoURL: 'images/LuigiRaceway.png'},
             {id: 3, title: 'Koopa Troopa Beach', photoURL: 'images/LuigiRaceway.png'},
             {id: 4, title: 'Kalimari Desert', photoURL: 'images/LuigiRaceway.png'}
-          ]
+          ],
+          completedCourses: []
         }
       ]
     };
