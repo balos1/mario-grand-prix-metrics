@@ -1,7 +1,6 @@
 <h2 class="page-title">New Grand Prix</h2>
-<div class="layout-row layout-xs-column layout-align-center-center">
-  Choose Players
-</div>
-<div class="layout-row layout-xs-column layout-align-center-center">
+{{#if isPlayersChosen}}
   {{outlet}}
-</div>
+{{else}}
+  {{choose-players onAllPlayersSelected=(action "onAllPlayersSelected")}}
+{{/if}}

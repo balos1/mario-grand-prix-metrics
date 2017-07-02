@@ -1,0 +1,7 @@
+.dashed-box {
+  border: 4px color($background, '400') dashed;
+  border-radius: 10%;
+  width: 200px;
+  height: 200px;
+  margin: 10px 0;
+}

@@ -4,12 +4,22 @@ $accent: "blue";
 $background: "grey";
 $warn: "yellow";
 
+// dependencies
 @import 'ember-paper';
+
+// routes
+@import 'choose-course';
+
+// components
 @import 'navigation';
 @import 'gp-cup';
 
 html, body {
   background-color: color($background, '100');
+}
+
+.page-title {
+  padding-left: 18px;
 }
 
 #add-gp {

@@ -8,8 +8,9 @@ import DS from 'ember-data';
  * @type DS.Model
  */
 export default DS.Model.extend({
-  timestamp: DS.attr('date'),
+  startDate: DS.attr('', { defaultValue: new Date() }),
+  inProgress: DS.attr('boolean', { defaultValue: true }),
   players: DS.hasMany('player'),
   completedCourses: DS.hasMany('completed-course'),
-  standings: DS.attr()
+  standings: DS.attr('', { defaultValue: [] })
 });

@@ -1,0 +1,14 @@
+<div class="layout-row layout-xs-column layout-align-center-center">
+  <h4>Select Your Players</h4>
+  {{#each selectedPlayers as |player|}}
+    <a {{action "selectPlayer"}}><div class="flex-100 dashed-box">
+      {{player.firstName}}
+    </div></a>
+  {{/each}}
+  {{#if (lt selectedPlayers.length 4)}}
+    <a {{action "selectPlayer"}}><div class="flex-100 dashed-box"></div></a>
+  {{/if}}
+  {{#paper-button primary=true raised=true onClick=(action "confirmAllPlayers" selectedPlayers)}}
+    Confirm Player Selection
+  {{/paper-button}}
+</div>
