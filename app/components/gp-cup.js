@@ -2,16 +2,15 @@ import Ember from 'ember';
 
 const {
   Component,
-  computed,
-  copy,
+  // computed,
   get,
-  set
+  // set
 } = Ember;
 
 export default Component.extend({
   cup: null,
 
-  completedCourses: computed.alias('cup.completedCourses'),
+  // completedCourses: computed.alias('cup.completedCourses'),
 
   showBackOfCard: false,
 

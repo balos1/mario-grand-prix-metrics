@@ -1,6 +1,7 @@
-<h2 class="page-title">Choose a Cup</h2>
+<h2 class="page-title">New Grand Prix</h2>
 <div class="layout-row layout-xs-column layout-align-center-center">
-  {{#each model.cups as |cup|}}
-    {{gp-cup class="flex-100" cup=cup chooseCourse=(action "chooseCourse")}}
-  {{/each}}
+  Choose Players
+</div>
+<div class="layout-row layout-xs-column layout-align-center-center">
+  {{outlet}}
 </div>

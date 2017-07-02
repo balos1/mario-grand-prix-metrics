@@ -7,7 +7,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('start-gp');
+  this.route('start-gp', function() {
+    this.route('choose-course');
+  });
 });
 
 export default Router;

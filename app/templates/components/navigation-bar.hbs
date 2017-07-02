@@ -7,7 +7,7 @@
     <span class="flex"></span>
     {{#paper-menu position="target-right target" as |menu|}}
       {{#menu.trigger}}
-        {{#paper-button class="profile" onClick=null iconBUtton=true}}
+        {{#paper-button class="profile" onClick=null iconButton=true bubbles=false}}
           <img class="profile-thumbnail" src={{cornerImageURL}}/>
         {{/paper-button}}
       {{/menu.trigger}}
@@ -29,10 +29,12 @@
   {{/paper-toolbar}}
   {{paper-divider}}
   <div class="layout-column layout-align-start-start">
-    {{#paper-button}}
-      {{paper-icon "dashboard"}}
-      <span>Dashboard</span>
-    {{/paper-button}}
+    {{#link-to "index"}}
+      {{#paper-button}}
+        {{paper-icon "dashboard"}}
+        <span>Dashboard</span>
+      {{/paper-button}}
+    {{/link-to}}
     {{#paper-button}}
       {{paper-icon "history"}}
       <span>History</span>
